@@ -16,5 +16,10 @@ namespace TDD2
 
         public object birthDay
         { get; set; }
+
+        public string SS
+        { get; set; }
+
+
     }
 }
