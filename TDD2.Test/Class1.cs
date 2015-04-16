@@ -48,7 +48,7 @@ namespace TDD2.Test
         [Fact]
         public void AgeTest()
         {
-            var p = new Person;
+            var p = new Person();
             p.birthDay = new DateTime(1990, 01, 01);
             var answer = p.birthDay - DateTime.Today;
             Assert.Equal(answer, 25);
