@@ -142,7 +142,78 @@ namespace TDD2.Test
             pList.AddPerson(p);
             Assert.Equal(pList.GetByIndex(1), c);
         }
-        
+
+        // creating and checking a list of people in alpha order
+        [Fact]
+        public void TestPersonList5()
+        {
+            var pList = new PersonList();
+
+            var p = new Person();
+            var c = new Person();
+            c.FName = "Nick";
+            c.LName = "Mudar";
+            p.FName = "Mark";
+            p.LName = "Jensen";
+            p.birthDay = new DateTime(1990, 01, 01);
+            c.birthDay = new DateTime(1890, 01, 01);
+            
+            Assert.Equal(c.CompareTo(p), 1);
+        }
+
+        // creating and checking a list of people in alpha order
+        [Fact]
+        public void TestPersonList6()
+        {
+            var pList = new PersonList();
+
+            var p = new Person();
+            var c = new Person();
+            c.FName = "Nick";
+            c.LName = "Mudar";
+            p.FName = "Mark";
+            p.LName = "Jensen";
+            p.birthDay = new DateTime(1990, 01, 01);
+            c.birthDay = new DateTime(1890, 01, 01);
+
+            Assert.Equal(p.CompareTo(c), -1);
+        }
+
+        // creating and checking a list of people in alpha order
+        [Fact]
+        public void TestPersonList7()
+        {
+            var pList = new PersonList();
+
+            var p = new Person();
+            var c = new Person();
+            c.FName = "Nick";
+            c.LName = "Mudar";
+            p.FName = "Nick";
+            p.LName = "Mudar";
+            p.birthDay = new DateTime(1890, 01, 01);
+            c.birthDay = new DateTime(1890, 01, 01);
+
+            Assert.Equal(p.CompareTo(c), 0);
+        }
+
+        // creating and checking a list of people in alpha order
+        [Fact]
+        public void TestPersonList8()
+        {
+            var pList = new PersonList();
+
+            var p = new Person();
+            var c = new Person();
+            c.FName = "Nick";
+            c.LName = "Mudar";
+            p.FName = "Nick";
+            p.LName = "Mudar";
+            p.birthDay = new DateTime(1990, 01, 01);
+            c.birthDay = new DateTime(1890, 01, 01);
+
+            Assert.Equal(p.CompareTo(c), 1);
+        }
     
     }
 }

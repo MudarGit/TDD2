@@ -11,7 +11,7 @@ namespace TDD2
         public void AddPerson(Person p)
         {
             var namedate = p.birthDay.Year.ToString();
-            var key = p.LName + namedate;
+            var key = p.LName  + p.FName + namedate;
 
             this.Add(key, p);
         }

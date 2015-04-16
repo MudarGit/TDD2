@@ -54,9 +54,16 @@ namespace TDD2
             return nameLF;
         }
 
-        public int CompareTo(Person other)
+        public int CompareTo(Person p)
         {
-            throw new NotImplementedException();
+            var namedate = p.birthDay.Year.ToString();
+            var pkey = p.LName + p.FName + namedate; 
+
+            namedate = this.birthDay.Year.ToString();
+            var tkey = this.LName + this.FName + namedate;
+
+            return tkey.CompareTo(pkey);
+            
         }
     }
 }
