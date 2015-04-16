@@ -214,6 +214,15 @@ namespace TDD2.Test
 
             Assert.Equal(p.CompareTo(c), 1);
         }
+        [Fact]
+        public void SadBirthdayTest()
+        {
+            var p = new Person();
+            var time = new DateTime(1955, 13, 13);
+            p.birthDay = time;
+            var answer = p.birthDay;
+            Assert.Equal(answer, time);
+        }
     
     }
 }
