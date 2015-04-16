@@ -50,8 +50,7 @@ namespace TDD2.Test
         {
             var p = new Person();
             p.birthDay = new DateTime(1990, 01, 01);
-            var answer = p.birthDay - DateTime.Today;
-            Assert.Equal(answer, 25);
+            Assert.Equal(p.getAge(), 25);
         }
     }
 }

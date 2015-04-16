@@ -21,5 +21,10 @@ namespace TDD2
         public String SS
         { get; set; }
 
+
+        public string getAge()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
