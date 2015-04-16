@@ -11,12 +11,20 @@ namespace TDD2.Test
     public class Class1
     {
         [Fact]
-       public string NameTest()
+       public void FirstNameTest()
         {
-            var p = new Person();
-            var answer = p.Name("Nick Mudar");
-            Assert.Equal("Nick Mudar", answer);       
+            var pf = new Person();
+            pf.FName = "Nick";
+            var answer = pf.FName;
+            Assert.Equal("Nick", answer);       
         }
-
+        [Fact]
+        public void LastNameTest()
+        {
+            var pl = new Person();
+            pl.LName = "Mudar";
+            var answer = pl.LName;
+            Assert.Equal("Mudar", answer);
+        }
     }
 }
