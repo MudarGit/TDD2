@@ -8,7 +8,7 @@ using TDD2;
 
 namespace TDD2.Test
 {
-    public class Class1
+    public class PersonTest
     {
         [Fact]
        public void FirstNameTest()
@@ -86,5 +86,20 @@ namespace TDD2.Test
             Assert.Equal(p.getNameLF(), "Jensen, Mark");
         }
 
+        // create a list of people in alpha order
+        [Fact]
+        public void TestPersonList()
+        {
+            var pList = new PersonList();
+
+            var p = new Person;
+            p.FName = "Mark";
+            p.LName="Jensen";
+            p.birthDay = new DateTime(1990, 01, 01);
+            pList.Add(p);
+
+            Assert.Equal(pList.Count, 1);
+        }
+    
     }
 }

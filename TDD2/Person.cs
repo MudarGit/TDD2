@@ -42,14 +42,16 @@ namespace TDD2
 
         public string getNameFL()
         {
-            var nameFL = FName + LName;
+            var nameFL = FName + ' ' + LName;
 
             return nameFL;
         }
 
         public string getNameLF()
         {
-            throw new NotImplementedException();
+            var nameLF = LName + ", " + FName;
+
+            return nameLF;
         }
     }
 }
