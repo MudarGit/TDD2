@@ -57,14 +57,26 @@ namespace TDD2.Test
         {
             var p = new Person();
             p.birthDay = new DateTime(1990, 01, 01);
-            var Age = p.getAge();
-            var vote = "no";
-            if (Age >= 18)
-            {
-                vote = "yes";
-            }
-
-            Assert.Equal(vote, "yes");
+            Assert.Equal(p.Vote(), "yes");
         }
+        [Fact]
+        public void NameChangeTest()
+        {
+            var p = new Person();
+            p.FName = "Mark";
+            p.LName = "Jensen";
+            p.FName = "Nick";
+            Assert.Equal(p.FName, "Nick");
+        }
+
+        [Fact]
+        public void TestGetNameFL()
+        {
+            var p = new Person();
+            p.FName = "Mark";
+            p.LName = "Jensen";
+            Assert.Equal(p.getNameFL(), "Mark Jensen");
+        }
+
     }
 }

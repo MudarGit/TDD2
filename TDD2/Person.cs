@@ -31,14 +31,18 @@ namespace TDD2
         }
         public string Vote()
         {
-            var p = new Person();
-            var Age = p.getAge();
-            string vote = "no";
+            var Age = this.getAge();
+            var vote = "no";
             if (Age >= 18)
             {
                vote = "yes";
             }
             return vote;
+        }
+
+        public string getNameFL()
+        {
+            throw new NotImplementedException();
         }
     }
 }
