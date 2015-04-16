@@ -26,5 +26,14 @@ namespace TDD2.Test
             var answer = pl.LName;
             Assert.Equal("Mudar", answer);
         }
+
+        [Fact]
+        public void BirthdayTest()
+        {
+            var p = new Person();
+            p.birthDay = 06/18/1955;
+            var answer = p.birthDate;
+            Assert.Equal(answer, 06 / 18 / 1955);
+        }
     }
 }

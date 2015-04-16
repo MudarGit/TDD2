@@ -8,7 +8,10 @@ namespace TDD2
 {
     public class Person
     {
-        public String Name
+        public String FName
+        { get; set; }
+
+        public String LName
         { get; set; }
     }
 }
