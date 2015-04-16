@@ -14,12 +14,12 @@ namespace TDD2
         public String LName
         { get; set; }
 
-        public object birthDay
+        public DateTime birthDay
         { get; set; }
 
-        public string SS
-        { get; set; }
 
+        public String SS
+        { get; set; }
 
     }
 }
