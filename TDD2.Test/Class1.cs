@@ -8,5 +8,13 @@ namespace TDD2.Test
 {
     public class Class1
     {
+        [Fact]
+       public string NameTest()
+        {
+            var p = new Person();
+            var answer = p.Name("Nick Mudar");
+            Assert.Equal("Nick Mudar", answer);       
+        }
+
     }
 }
