@@ -92,14 +92,38 @@ namespace TDD2.Test
         {
             var pList = new PersonList();
 
-            var p = new Person;
+            var p = new Person();
+            var c = new Person();
+            c.FName = "Nick";
+            c.LName = "Mudar";
             p.FName = "Mark";
             p.LName="Jensen";
             p.birthDay = new DateTime(1990, 01, 01);
-            pList.Add(p);
-
-            Assert.Equal(pList.Count, 1);
+            c.birthDay = new DateTime(1890, 01, 01);
+            pList.AddPerson(c);
+            pList.AddPerson(p);
+            Assert.Equal(pList.Count, 2);
         }
+        
+        // creating and checking a list of people in alpha order
+        [Fact]
+        public void TestPersonList2()
+        {
+            var pList = new PersonList();
+
+            var p = new Person();
+            var c = new Person();
+            c.FName = "Nick";
+            c.LName = "Mudar";
+            p.FName = "Mark";
+            p.LName = "Jensen";
+            p.birthDay = new DateTime(1990, 01, 01);
+            c.birthDay = new DateTime(1890, 01, 01);
+            pList.AddPerson(c);
+            pList.AddPerson(p);
+            Assert.Equal(pList.GetByIndex(0), p);
+        }
+        
     
     }
 }
