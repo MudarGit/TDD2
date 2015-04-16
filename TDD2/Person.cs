@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TDD2
 {
-    public class Person
+    public class Person : IComparable<Person>
     {
         public String FName
         { get; set; }
@@ -52,6 +52,11 @@ namespace TDD2
             var nameLF = LName + ", " + FName;
 
             return nameLF;
+        }
+
+        public int CompareTo(Person other)
+        {
+            throw new NotImplementedException();
         }
     }
 }
