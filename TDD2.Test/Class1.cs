@@ -77,6 +77,14 @@ namespace TDD2.Test
             p.LName = "Jensen";
             Assert.Equal(p.getNameFL(), "Mark Jensen");
         }
+        [Fact]
+        public void TestGetNameLF()
+        {
+            var p = new Person();
+            p.FName = "Mark";
+            p.LName = "Jensen";
+            Assert.Equal(p.getNameLF(), "Jensen, Mark");
+        }
 
     }
 }
