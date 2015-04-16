@@ -22,9 +22,23 @@ namespace TDD2
         { get; set; }
 
 
-        public string getAge()
+        public int getAge()
         {
-            throw new NotImplementedException();
+           var CDate = System.DateTime.Today;
+           var Age = CDate.Year - birthDay.Year;
+
+           return Age;           
+        }
+        public string Vote()
+        {
+            var p = new Person();
+            var Age = p.getAge();
+            string vote = "no";
+            if (Age >= 18)
+            {
+               vote = "yes";
+            }
+            return vote;
         }
     }
 }

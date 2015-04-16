@@ -52,5 +52,19 @@ namespace TDD2.Test
             p.birthDay = new DateTime(1990, 01, 01);
             Assert.Equal(p.getAge(), 25);
         }
+        [Fact]
+        public void VoteTest()
+        {
+            var p = new Person();
+            p.birthDay = new DateTime(1990, 01, 01);
+            var Age = p.getAge();
+            var vote = "no";
+            if (Age >= 18)
+            {
+                vote = "yes";
+            }
+
+            Assert.Equal(vote, "yes");
+        }
     }
 }
