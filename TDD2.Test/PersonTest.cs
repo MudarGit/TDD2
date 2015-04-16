@@ -31,10 +31,10 @@ namespace TDD2.Test
         public void BirthdayTest()
         {
             var p = new Person();
-            var time = new DateTime(1955, 06, 08);
-            p.birthDay = time;
+            p.SetBirthDay("06/08/1955");
             var answer = p.birthDay;
-            Assert.Equal(answer, time);
+            var indate = new DateTime(1955, 06, 08);
+            Assert.Equal(answer, indate);
         }
         [Fact]
         public void SSTest()
@@ -49,14 +49,14 @@ namespace TDD2.Test
         public void AgeTest()
         {
             var p = new Person();
-            p.birthDay = new DateTime(1990, 01, 01);
+            p.SetBirthDay("01/01/1990");
             Assert.Equal(p.getAge(), 25);
         }
         [Fact]
         public void VoteTest()
         {
             var p = new Person();
-            p.birthDay = new DateTime(1990, 01, 01);
+            p.SetBirthDay("01/01/1990");
             Assert.Equal(p.Vote(), "yes");
         }
         [Fact]
@@ -98,8 +98,8 @@ namespace TDD2.Test
             c.LName = "Mudar";
             p.FName = "Mark";
             p.LName="Jensen";
-            p.birthDay = new DateTime(1990, 01, 01);
-            c.birthDay = new DateTime(1890, 01, 01);
+            p.SetBirthDay("01/01/1990");
+            c.SetBirthDay("01/01/1890");
             pList.AddPerson(c);
             pList.AddPerson(p);
             Assert.Equal(pList.Count, 2);
@@ -117,8 +117,8 @@ namespace TDD2.Test
             c.LName = "Mudar";
             p.FName = "Mark";
             p.LName = "Jensen";
-            p.birthDay = new DateTime(1990, 01, 01);
-            c.birthDay = new DateTime(1890, 01, 01);
+            p.SetBirthDay("01/01/1990");
+            c.SetBirthDay("01/01/1890");
             pList.AddPerson(c);
             pList.AddPerson(p);
             Assert.Equal(pList.GetByIndex(0), p);
@@ -136,8 +136,8 @@ namespace TDD2.Test
             c.LName = "Mudar";
             p.FName = "Mark";
             p.LName = "Jensen";
-            p.birthDay = new DateTime(1990, 01, 01);
-            c.birthDay = new DateTime(1890, 01, 01);
+            p.SetBirthDay("01/01/1990");
+            c.SetBirthDay("01/01/1890");
             pList.AddPerson(c);
             pList.AddPerson(p);
             Assert.Equal(pList.GetByIndex(1), c);
@@ -155,8 +155,8 @@ namespace TDD2.Test
             c.LName = "Mudar";
             p.FName = "Mark";
             p.LName = "Jensen";
-            p.birthDay = new DateTime(1990, 01, 01);
-            c.birthDay = new DateTime(1890, 01, 01);
+            p.SetBirthDay("01/01/1990");
+            c.SetBirthDay("01/01/1890");
             
             Assert.Equal(c.CompareTo(p), 1);
         }
@@ -173,8 +173,8 @@ namespace TDD2.Test
             c.LName = "Mudar";
             p.FName = "Mark";
             p.LName = "Jensen";
-            p.birthDay = new DateTime(1990, 01, 01);
-            c.birthDay = new DateTime(1890, 01, 01);
+            p.SetBirthDay("01/01/1990");
+            c.SetBirthDay("01/01/1890");
 
             Assert.Equal(p.CompareTo(c), -1);
         }
@@ -191,8 +191,8 @@ namespace TDD2.Test
             c.LName = "Mudar";
             p.FName = "Nick";
             p.LName = "Mudar";
-            p.birthDay = new DateTime(1890, 01, 01);
-            c.birthDay = new DateTime(1890, 01, 01);
+            p.SetBirthDay("01/01/1890");
+            c.SetBirthDay("01/01/1890");
 
             Assert.Equal(p.CompareTo(c), 0);
         }
@@ -209,8 +209,8 @@ namespace TDD2.Test
             c.LName = "Mudar";
             p.FName = "Nick";
             p.LName = "Mudar";
-            p.birthDay = new DateTime(1990, 01, 01);
-            c.birthDay = new DateTime(1890, 01, 01);
+            p.SetBirthDay("01/01/1990");
+            c.SetBirthDay("01/01/1890");
 
             Assert.Equal(p.CompareTo(c), 1);
         }
@@ -218,10 +218,8 @@ namespace TDD2.Test
         public void SadBirthdayTest()
         {
             var p = new Person();
-            var time = new DateTime(1955, 13, 13);
-            p.birthDay = time;
-            var answer = p.birthDay;
-            Assert.Equal(answer, time);
+            var ok =  p.SetBirthDay("13/13/1955");
+            Assert.Equal(ok, false);
         }
     
     }

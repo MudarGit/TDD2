@@ -15,7 +15,19 @@ namespace TDD2
         { get; set; }
 
         public DateTime birthDay
-        { get; set; }
+        { get;  private set; }
+
+        public bool SetBirthDay(String bDate)
+        {
+            var theDay = new DateTime();
+            if (DateTime.TryParse(bDate, out theDay))
+            {
+                this.birthDay = theDay;
+                return true;
+            }
+            else
+                return false;
+        }
 
 
         public String SS
