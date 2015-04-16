@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace TDD2
 {
-    public class Class1
+    public class Person
     {
+        public String Name
+        { get; set; }
     }
 }
