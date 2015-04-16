@@ -31,9 +31,18 @@ namespace TDD2.Test
         public void BirthdayTest()
         {
             var p = new Person();
-            p.birthDay = 06/18/1955;
-            var answer = p.birthDate;
-            Assert.Equal(answer, 06 / 18 / 1955);
+            var time = new DateTime(1955, 06, 08);
+            p.birthDay = time;
+            var answer = p.birthDay;
+            Assert.Equal(answer, time);
+        }
+        [Fact]
+        public void SSTest()
+        {
+            var p = new Person();
+            p.SS = "999-86-3258";
+            var answer = p.SS;
+            Assert.Equal(p.SS, answer);
         }
     }
 }

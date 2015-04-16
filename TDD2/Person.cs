@@ -13,5 +13,8 @@ namespace TDD2
 
         public String LName
         { get; set; }
+
+        public object birthDay
+        { get; set; }
     }
 }
